@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fianarantsoa à la Belle Époque — Souvenirs vivants de Jacqueline Jacta épouse COP</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <span class="nav-logo">JJ</span>
+            <span class="nav-title">Jacqueline Jacta</span>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#accueil" class="active">Accueil</a></li>
+            <li><a href="#chronologie">Chronologie</a></li>
+            <li><a href="#recits">Récits</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#carte">La Ville</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#personnages">Personnages</a></li>
+            <li><a href="#apropos">À propos</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO / ACCUEIL -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-epigraph">« Une ville pleine de vie, d'amour, de beauté, de traditions où l'on ne s'ennuie rarement. »</p>
+            <h1 class="hero-title">Fianarantsoa<br><span class="hero-subtitle">à la Belle Époque</span></h1>
+            <p class="hero-author">Souvenirs vivants de <strong>Jacqueline Jacta</strong> épouse COP</p>
+            <p class="hero-dates">1935 — Ay, Champagne &nbsp;·&nbsp; Fianarantsoa, Madagascar</p>
+            <a href="#chronologie" class="hero-cta">Entrer dans l'histoire</a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Défiler</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section id="introduction" class="section-intro">
+        <div class="container">
+            <div class="intro-with-photo">
+                <div class="intro-photo">
+                    <img src="../Photo Madagascar/1943 ANNIE SAINTY SUD HOTEL JACQUELINE JACTA GARGE CITROEN.jpg" alt="Jacqueline Jacta enfant avec Annie Sainty, 1943">
+                    <p class="intro-photo-caption">Jacqueline Jacta et Annie Sainty — 1943</p>
+                </div>
+                <div class="intro-text">
+                    <h2>Il était une fois...</h2>
+                    <p class="intro-lead">En 1923, un groupe de jeunes européens débarqua à Tananarive, embauchés par la société Citroën. Parmi eux, <strong>Albert Jacta</strong>, qui allait ouvrir le garage Citroën de Fianarantsoa en 1930 et y fonder une famille.</p>
+                    <p>Sa fille <strong>Jacqueline</strong>, née en 1935 à Ay en Champagne, a grandi dans cette ville des hauts plateaux malgaches. À travers ses souvenirs, ses récits et ses photographies, elle nous offre un témoignage unique sur une époque révolue — celle de Fianarantsoa à la belle époque.</p>
+                    <p>Ce site recueille ses souvenirs et ceux d'une ville qui fut un carrefour de cultures, de fêtes et de vie — pour que rien ne se perde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHRONOLOGIE -->
+    <section id="chronologie" class="section-timeline">
+        <div class="container">
+            <h2 class="section-title">Chronologie</h2>
+            <p class="section-subtitle">Les années lumière · 1923 — 1964</p>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-year="1923">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1923</div>
+                    <div class="timeline-card">
+                        <h3>L'arrivée à Madagascar</h3>
+                        <p>Albert Jacta débarque à Tananarive avec l'équipe Citroën pour l'ouverture du grand garage d'Analakely, dirigé par Pierre Gros. Cécile Cocteau, sa femme, le rejoint en 1925 par bateau, passant par le canal de Suez et débarquant à Diego Suarez.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1930">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1930</div>
+                    <div class="timeline-card">
+                        <h3>Fianarantsoa — Le garage Citroën</h3>
+                        <p>Citroën choisit Albert Jacta comme directeur du nouveau garage de Fianarantsoa, face à la vieille poste. La famille s'installe avenue Lyautey, dans une petite maison appartenant à M. Moutel, directeur du Transud.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1933">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1933</div>
+                    <div class="timeline-card">
+                        <h3>Naissance du frère à Fianarantsoa</h3>
+                        <p>Le grand frère de Jacqueline naît à Fianarantsoa. La famille Jacta est désormais bien installée dans la petite maison de l'avenue Lyautey, en face du collège René Cassin.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1935">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">27 oct. 1935</div>
+                    <div class="timeline-card">
+                        <h3>Naissance de Jacqueline</h3>
+                        <p>Jacqueline naît à Ay, en Champagne, pendant un congé en France. Sa mère, enceinte, avait attendu la naissance avant de repartir avec ses frères Robert et Claude en décembre pour Madagascar.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1940">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1940–1942</div>
+                    <div class="timeline-card">
+                        <h3>La Villa Isaha</h3>
+                        <p>Papa achète un terrain à côté du tennis. En creusant les fondations, surprise : un caveau de roi Betsileo ! On apprend que le quartier Isaha était leur royaume. Conseillé par les sorciers, papa se plie au <em>fomba</em> pour conjurer les mauvais sorts. La villa, construite par l'entreprise Scacco, voit le jour en 1942.</p>
+                        <div class="timeline-quote">« À mes yeux de petite fille, elle est magnifique et trop belle. »</div>
+                        <img class="timeline-img" src="../Photo Madagascar/jardin les Franjipanier de MmJacta 42.jpg" alt="Le jardin de la Villa Isaha">
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1943">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1943</div>
+                    <div class="timeline-card">
+                        <h3>La piscine et les serpents sacrés</h3>
+                        <p>Face à la maison Lyautey, on construit une jolie piscine et un bâtiment avec deux tours. Mais en creusant, les ouvriers découvrent un nid de serpents — sacrés pour les autochtones. Un vazaha les décapite à la hache. Les ouvriers, outrés, s'enfuient. La piscine devient « maudite » par le nombre de noyés.</p>
+                        <img class="timeline-img" src="../Hafa koa/ob_7d4754_la-piscine 1943 FOND MAISON LYAUTEY 1900 ET MUSE.jpg" alt="La piscine 1943">
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1947">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1947</div>
+                    <div class="timeline-card">
+                        <h3>Premier voyage en France</h3>
+                        <p>Papa part en bateau avec Claude et sa Traction munie de gazogènes. Jacqueline prend l'avion avec Maman — un quadrimoteur ! Escale à Khartoum, panne de moteur, nuit au Caire avec survol des pyramides, puis Tunis. Six mois en France... à s'ennuyer.</p>
+                        <div class="timeline-quote">« J'ai toujours détesté la France. Je me demande encore maintenant qu'est-ce que je fais là. »</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1950">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">Nouvel An 1950</div>
+                    <div class="timeline-card">
+                        <h3>Le premier bal</h3>
+                        <p>Au Cercle Français, Jacqueline ouvre le bal du réveillon avec son papa, habillée de sa première robe de bal en tulle bleu et paillettes.</p>
+                        <div class="timeline-quote">« Ce fut l'admiration de tout le monde. »</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1953-1">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1953</div>
+                    <div class="timeline-card">
+                        <h3>Le cyclone à Ampasambazaha</h3>
+                        <p>Un cyclone frappe Fianarantsoa. Les rues d'Ampasambazaha sont submergées, les bâtiments inondés. Les photos témoignent de la violence de la catastrophe.</p>
+                        <img class="timeline-img" src="../Photos/04-Evenements/cyclone-1953-rue-inondee.jpg" alt="Cyclone Ampasambazaha 1953">
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1953-2">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1953</div>
+                    <div class="timeline-card">
+                        <h3>Visite du Général de Gaulle</h3>
+                        <p>Fianarantsoa a l'honneur de recevoir le Général de Gaulle. Le monument aux morts est honoré. La ville accueillera aussi Deferre et Mitterrand.</p>
+                        <img class="timeline-img" src="../Photo Madagascar/general de GAULLE 1953.jpg" alt="Visite de Gaulle 1953">
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1955">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1955</div>
+                    <div class="timeline-card">
+                        <h3>Les premières courses automobiles</h3>
+                        <p>Levée des drapeaux par Albert Jacta. Départ des voitures tourisme avec des amis malgaches, puis les bolides — et ces dames qui se défendent pas mal face aux messieurs ! Cocktail de remise des coupes au Picardy. Sous la houlette de l'Automobile Club de Madagascar.</p>
+                        <img class="timeline-img" src="../Hafa koa/lever drapeau mr jacta50520 (2).jpg" alt="Levée du drapeau courses 1955">
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1956">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1956</div>
+                    <div class="timeline-card">
+                        <h3>Le mariage</h3>
+                        <p>Jacqueline se marie à la Mairie de Fianarantsoa. Le maire est Monsieur Leroy, coéquipier de Lyautey et Gallieni.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1957">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1957</div>
+                    <div class="timeline-card">
+                        <h3>3ème édition des courses</h3>
+                        <p>Jacqueline, dans sa première année de mariage, assiste depuis les tribunes. Son mari prépare ses bolides avec soin. Dauphines, Alfa-Romeo, Porsche Carrera... Remise des coupes au Picardy par M. Varouvert à M. Pfenniger.</p>
+                        <img class="timeline-img" src="../Hafa koa/7e rallye de mada 1957 50511 (2).jpg" alt="7ème rallye 1957">
+                    </div>
+                </div>
+
+                <div class="timeline-item has-image" data-year="1959">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1959</div>
+                    <div class="timeline-card">
+                        <h3>Rallyes et dernières fêtes</h3>
+                        <p>Le rallye consommation Fianarantsoa–Ranomafana. Le 7ème rallye de Madagascar avec pointage à la gare, suivi de bal dans le hall. Les gymkhanas sur la place devant la Trano Pokolona. Les dernières belles années.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1960">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">1960</div>
+                    <div class="timeline-card">
+                        <h3>Le départ</h3>
+                        <p>Jacqueline, mariée et mère d'un fils né en 1959, quitte définitivement Madagascar. Son fils est gravement malade. Une page se tourne. Fianarantsoa à la belle époque n'est plus qu'un souvenir — mais quel souvenir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RÉCITS -->
+    <section id="recits" class="section-recits">
+        <div class="container">
+            <h2 class="section-title">Les Récits</h2>
+            <p class="section-subtitle">Dans les mots de Jacqueline</p>
+
+            <div class="recits-grid">
+                <!-- Récit 1 : La Belle Époque -->
+                <article class="recit-card" id="recit-belle-epoque">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">I</span>
+                        <h3>Fianarantsoa à la Belle Époque</h3>
+                        <p class="recit-excerpt">« À mon éveil de petite fille, je découvre une grande avenue boisée d'eucalyptus, bambous et autres qui ombrageaient par une voûte naturelle cette avenue... »</p>
+                        <button class="recit-toggle" data-target="recit-1">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-1">
+                        <div class="recit-content">
+                            <p>À mon éveil de petite fille, je découvre une grande avenue boisée d'eucalyptus, bambous et autres qui ombrageaient par une voûte naturelle cette avenue et deux maisons ; la petite où nous habitions et la grosse maison où Lyautey a résidé durant son séjour à Fianarantsoa, à la conquête de Madagascar, en compagnie d'un de ses hommes, Monsieur Leroy, qui lui resta définitivement à Fianarantsoa et en est devenu maire.</p>
+                            <p>Ainsi cette avenue a été baptisée <strong>Avenue Lyautey</strong>.</p>
+                            <p>Tout près de notre maison, il y avait un terrain de tennis qui, dans les années 1952, on y construisit de gros bâtiments de quatre appartements.</p>
+                            <p>Puis en 1940, papa décida d'acheter le terrain d'à côté pour construire notre villa. En creusant les fondations, nous avons eu la surprise de découvrir une chambre mortuaire avec les ossements. Nous apprenons que ce terrain appartenait à des rois Betsileo et que ce quartier était à l'époque le fief Betsileo.</p>
+                            <p>De ce fait, conseillé par les sorciers, papa se plia au <em>fomba</em> pour conjurer les mauvais sorts. Ainsi la villa vit le jour.</p>
+                            <p>Face à la maison Lyautey, dans les années 1943, ils nous construisirent une jolie piscine et un bâtiment avec deux tours qui faisait fonction de salle de sport. Malheureusement, une anecdote se produisit et la piscine est devenue maudite par le nombre de noyés.</p>
+                            <p>Au moment de creuser cette piscine, les ouvriers découvrent un très gros nid de serpents — pour les autochtones, ils sont sacrés ; pour eux, ce sont les ancêtres qui reviennent — mais voilà, un vazaha eut l'idée d'aller chercher une hache et coupa la tête de tous les serpents. Les ouvriers, outrés, se sont sauvés. Plus tard, ce vazaha n'a rencontré que des malédictions. De plus, ils n'ont jamais fait de <em>fomba</em>.</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 2 : La Villa -->
+                <article class="recit-card" id="recit-villa">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">II</span>
+                        <h3>La Villa Isaha</h3>
+                        <p class="recit-excerpt">« La jolie villa sort enfin de terre en 1942. À mes yeux de petite fille, elle est magnifique et trop belle... »</p>
+                        <button class="recit-toggle" data-target="recit-2">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-2">
+                        <div class="recit-content">
+                            <p>La jolie villa sort enfin de terre en 1942. À mes yeux de petite fille, elle est magnifique et trop belle.</p>
+                            <p>Elle se distribue ainsi — côté gauche : trois grandes chambres. La première, sur la rue, celle de mes frères. La deuxième au milieu, la mienne. La troisième, celle des parents, qui donne sur la cour derrière. Au centre, la salle de bain — grande baignoire, lavabo, bidet, meuble à pharmacie. Un grand couloir de deux mètres sur dix.</p>
+                            <p>Côté droit : le grand salon meublé de marqueterie d'Ambositra, un lustre en fer forgé, un grand divan en velours rouge accompagné de trois grands fauteuils, le piano. La salle à manger, toujours meublée de très beaux meubles. L'office plus l'escalier qui monte à l'étage, identique au bas.</p>
+                            <p>La cuisine : gros frigo qui à l'époque fonctionnait au pétrole, cuisinière à bois — le domaine de <strong>Dada</strong>, cuisinier chez Madame Jacta de 1940 à 1962.</p>
+                            <p>Nous avions également un serveur qui se nomme <strong>Pierre</strong>, un garçon que Maman avait pris sous sa protection en 1943. Orphelin, il sortait avec nous. Elle lui a appris le jardin, le ménage, le service, la cuisine.</p>
+                            <p>Dans la cour de derrière, Maman avait poulailler, potager. Et dans la vallée, elle créa en espalier un magnifique verger avec toutes les sortes d'arbres fruitiers qu'elle avait achetés vers le lac Anosy, ainsi que tous ses rosiers.</p>
+                            <p>Sur la rue, elle créa le plus beau jardin de l'avenue.</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 3 : Les Loisirs -->
+                <article class="recit-card" id="recit-loisirs">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">III</span>
+                        <h3>Les Loisirs et les Fêtes</h3>
+                        <p class="recit-excerpt">« Pour les loisirs, nous avions le Cercle Français, organisé par parrainage. On y trouvait les salles de bridge, billard, lecture, danse, bar, ping-pong, tennis... »</p>
+                        <button class="recit-toggle" data-target="recit-3">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-3">
+                        <div class="recit-content">
+                            <p>Pour les loisirs des européens, nous avions le Cercle Français, organisé par parrainage pour les derniers arrivés. On y trouvait les salles de bridge, billard, lecture, danse, bar, ping-pong, tennis.</p>
+                            <p>En l'occasion des fêtes de fin d'année, Pâques, 11 novembre — les grands bals en grande tenue du soir. Pour les enfants, au moment du Mardi Gras, bal costumé et goûter au Cercle Français — la « quête des carnavals » où tous les enfants des Européens se retrouvaient.</p>
+                            <p>Les grandes réceptions lors des visites du <strong>Général de Gaulle</strong>, <strong>Deferre</strong>, <strong>Mitterrand</strong>, gouverneurs et autres.</p>
+                            <p>Puis dans les années 45 à 60 : les courses de voitures légères et les bolides sur les circuits vers Singère et Ambalapaiso Ambony. Les présentations des nouvelles collections de voitures avec ces élégantes entre 52 et 55 — l'Automobile Club de Madagascar présentait chaque année les nouveaux modèles Citroën et autres marques, toujours à Fianarantsoa, car c'était la capitale du Sud. Les rallyes consommation Fianarantsoa–Ranomafana en 1959. Les grands rallyes de l'île au pointage de notre gare, suivis de bal dans le hall de la gare.</p>
+                            <p>Les gymkhanas sur la place vers la Trano Pokolona, en voitures et motos. Les courses de chevaux vers le lac Anosy. Les courses de vélos.</p>
+                            <p>En un mot, <strong>une ville pleine de vie, d'amour, de beauté, de traditions où l'on ne s'ennuie rarement</strong>.</p>
+                            <p>Nos promenades aux alentours : <strong>Ranomafana</strong> pour sa piscine, baignoire, golf miniature, hôtel Bouriane. Le <strong>lac Sahambava</strong> pour la pêche et promenade en bateau. <strong>Isorano</strong> pour ses promenades dans les vignes Fievet et la recherche d'or dans sa petite rivière. <strong>Ambalavao</strong> pour son papier Antemoro et hôtel Verger. <strong>Ranohira</strong> pour son site de l'Isalo et hôtel Berny. <strong>Ambohimasoa</strong> pour ses conserves Lachaise. <strong>Ambositra</strong> pour sa marqueterie.</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 4 : Les Courses -->
+                <article class="recit-card" id="recit-courses">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">IV</span>
+                        <h3>Les Courses Automobiles</h3>
+                        <p class="recit-excerpt">« Tout d'abord la levée des drapeaux par mon père. Puis le départ des voitures tourisme où participaient des amis malgaches... »</p>
+                        <button class="recit-toggle" data-target="recit-4">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-4">
+                        <div class="recit-content">
+                            <p><strong>1ère édition — 1955</strong></p>
+                            <p>Tout d'abord, la levée des drapeaux par mon père. Puis le départ des voitures tourisme où participaient des amis malgaches. Suivie des petits bolides, ainsi que ces dames qui se concurrencent à ces messieurs, où elles se sont pas mal défendues.</p>
+                            <p>Toute cette journée, par le beau soleil de notre île, s'est terminée par un cocktail au Picardy pour la remise des coupes et cadeaux. Toujours sous la houlette de l'Automobile Club de Madagascar.</p>
+                            <p><strong>3ème édition — 1957</strong></p>
+                            <p>Comme le dit notre chef de Province, les courses de voitures restent d'un intérêt public appréciées de tous. J'ai dû venir un peu dans les tribunes, mais étant dans ma première année de mariage, je n'ai guère participé à cette manifestation. De plus, mon père avait cédé le relais de la présidence à Monsieur Poisson de l'Automobile Club de Madagascar.</p>
+                            <p>Par contre, mon mari lui avait préparé plusieurs de ses petits bolides avec soin, comme était son habitude.</p>
+                            <p>Le départ des voitures légères dont les Dauphines de M. Saget et Cerati. Puis le départ des bolides dont M. Pfenniger en conversation avec M. Saulnier dans son Alfa-Romeo. Puis celle-ci en pleine course, suivie de la Porsche Carrera de M. Murat.</p>
+                            <p>Puis ce fut la remise des coupes, comme d'habitude, au Picardy. Ainsi se termina les courses de vitesse de Fianarantsoa — mais pas les rallyes et autres.</p>
+                            <p><strong>Le rallye de consommation</strong></p>
+                            <p>Le rallye de consommation Fianarantsoa–Ranomafana était une épreuve singulière : on attribuait à chaque concurrent la même quantité d'essence, calculée sur la consommation théorique pour le parcours. Tous avaient à peu près les mêmes voitures. Le vainqueur était celui qui arrivait avec le plus d'essence restant dans le réservoir — certains tombaient en panne avant la ligne d'arrivée !</p>
+                            <p>Mon père était d'abord représentant Citroën, puis Peugeot. Quand mon mari et moi avons acheté une Dauphine Renault, ma mère était en colère : elle représentait Peugeot, et sa fille achetait chez le concurrent !</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 5 : Promenade dans les quartiers -->
+                <article class="recit-card" id="recit-quartiers">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">V</span>
+                        <h3>Promenade dans les Quartiers</h3>
+                        <p class="recit-excerpt">« Montons allée Lyautey jusqu'au Zoma... Face à la villa, M. Scacco construit le premier immeuble en 1942... »</p>
+                        <button class="recit-toggle" data-target="recit-5">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-5">
+                        <div class="recit-content">
+                            <p><strong>Allée Lyautey — Isaha</strong></p>
+                            <p>Face à la villa, M. Scacco construit le premier immeuble en 1942, puis la maison de M. Lande. La route est busée, les fossés disparaissent, les arbres aussi. En 1950, Papa construit le garage.</p>
+                            <p>Face au Zoma, M. Morlet construit les trois villas. La maison Lyautey face à la piscine disparaît au profit des quatre villas qui logent les gens des Eaux et Forêts.</p>
+
+                            <p><strong>Ambalapaiso Ambony</strong></p>
+                            <p>Du croisement des quatre rues : le bâtiment Fievet sur la gauche. La grosse maison où logeait le maire M. David dans les années 47-55. Les bâtiments marseillaise. Les logements de M. Reni et la famille Winter. Un peu plus bas, le petit château Moutel.</p>
+                            <p>Sur la droite, face au bâtiment Fievet : un petit terrain vague, notre lieu de jeu avec Annie pendant que nos parents prenaient l'apéritif. La maison de Geneviève Morel. Plus bas, la maison des années Gallieni où M. Lombardo logeait — là est née Jacqueline en 47.</p>
+                            <p>L'immeuble avec la quincaillerie des frères Devaux. En bas, un petit bijoutier malgache que papa faisait travailler. La grosse villa de M. Langlois. L'atelier de l'armée de Besoritra dirigé par l'adjudant Lombardo.</p>
+
+                            <p><strong>Ambalapaiso Ambany</strong></p>
+                            <p>La bijouterie Amir Khan. Le garage Renault tenu d'abord par M. Fed'Herbe, puis par M. et Mme Laire. Le salon de coiffure de M. Debert. La famille Vélonjary, avocat, avec ses filles et fils — l'une d'elles, Céline, devenue Mme Ratsira.</p>
+                            <p>Les trois grosses maisons de M. Malaise, propriétaire d'une rizerie — c'est lui qui fit construire ces trois villas. Le Picardy, appelé d'abord <strong>Sud-Hôtel</strong>, puis Hôtel Betsileo — le carrelage d'origine est encore visible aujourd'hui. L'immeuble Fievet. L'emplacement de l'ex-cinéma Rex. L'arrière de l'immeuble Shaick et Hoyda.</p>
+
+                            <p><strong>Le quartier européen et le bazaar</strong></p>
+                            <p>Tout le haut de Fianarantsoa — le secteur des banques, de la mairie, du tribunal, du Cercle Français — c'était le « quartier Vasa » avec tous les gros bâtiments et les magasins européens. En descendant vers le bazaar, on entrait dans le quartier malgache, chinois et indien. C'était là qu'on allait faire nos courses.</p>
+                            <p>Fianarantsoa comptait deux cinémas : le <strong>Rex</strong> et l'<strong>Excelsior</strong>. L'Excelsior est devenu le Rex d'aujourd'hui, et l'ancien Rex a été démoli.</p>
+                            <p>L'entreprise <strong>Fiervé</strong>, en face de la Chaudière, faisait le riz, le vin, le transport, l'import-export. Le bâtiment, qui rejoint Ambalapaiso Ambony, existe encore aujourd'hui — c'est devenu un centre médical avec un jardin intérieur.</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 6 : Le voyage en France -->
+                <article class="recit-card" id="recit-voyage">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">VI</span>
+                        <h3>Le Voyage en France — 1947</h3>
+                        <p class="recit-excerpt">« Papa partit par bateau avec mon frère Claude et sa Traction munie de gazogènes. Moi j'ai pris l'avion avec Maman sur un quadrimoteur... »</p>
+                        <button class="recit-toggle" data-target="recit-6">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-6">
+                        <div class="recit-content">
+                            <p>Papa partit par bateau avec mon frère Claude et sa Traction munie de gazogènes, sachant qu'en France il y avait encore des tickets et des marchandises pour la famille, ceci en mai 47.</p>
+                            <p>Moi j'ai pris l'avion avec Maman sur un quadrimoteur. La première escale : <strong>Khartoum</strong>, il y faisait très chaud. Nous avons mangé dans un restaurant des nouilles au lait de chèvre et de la confiture, vu que nous étions chez les Anglais.</p>
+                            <p>Après le décollage, un moteur tombe en panne ! Du coup, nous atterrissons au <strong>Caire</strong>. Nous avons eu la chance de survoler les Pyramides en attendant d'atterrir. Comme ils ne pouvaient pas faire la réparation, ils nous ont fait dormir dans un grand hôtel.</p>
+                            <p>Puis le lendemain, direction <strong>Tunis</strong>, toujours avec trois moteurs. Là, la réparation a eu lieu. En attendant, nous avons visité Tunis le soir avec les pilotes et navigateurs.</p>
+                            <p>Le lendemain, direction <strong>Paris</strong>. Nous sommes restés six mois, à mon plus grand désespoir : je m'ennuyais. Du coup, j'ai toujours détesté la France. Je me demande encore maintenant qu'est-ce que je fais là.</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 7 : Historique de Fianarantsoa -->
+                <article class="recit-card" id="recit-historique">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">VII</span>
+                        <h3>Petite Histoire de Fianarantsoa</h3>
+                        <p class="recit-excerpt">« Détachée de l'Afrique, Madagascar fut découverte par les Portugais en l'an 1500. Diego Diaz la surnomma Île Nato Lourenço... »</p>
+                        <button class="recit-toggle" data-target="recit-7">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-7">
+                        <div class="recit-content">
+                            <p>Détachée de l'Afrique, Madagascar fut découverte par les Portugais en l'an 1500. Diego Diaz, le 10 août 1500, la surnomma « Île Nato Lourenço ».</p>
+                            <p>En 1643, l'île fut théoriquement annexée à la France. À son extrémité sud-est fut établi Fort-Dauphin, ainsi nommé en l'honneur du futur roi Louis XIV. En 1665, elle prit le nom d'« Île Dauphine ».</p>
+                            <p>Madagascar devint colonie française le 1er octobre 1895. Un traité de protectorat fut imposé à la reine Ranavalona III. L'île devint partie intégrante de l'Empire français pour un peu plus d'un demi-siècle.</p>
+                            <p>Petit à petit, les Français s'installèrent, d'abord à Diego Suarez, puis à Tamatave, Tananarive, Antsirabe, Fianarantsoa, Tuléar et Fort-Dauphin.</p>
+                            <p>Il faut rappeler que la <strong>Nationale 7</strong> fut tracée par le maréchal Gallieni, le maréchal Lyautey et le colonel Besson, accompagnés de leur infirmière Mme Lobet, et de MM. Leroy, Durgeat, Goget, Bouquinvillier, et bien d'autres qui, durant le périple, perdirent la vie à cause du paludisme, de la fièvre jaune, de la peste...</p>
+                            <p><strong>Les Pionniers de Fianarantsoa</strong></p>
+                            <p>À Fianarantsoa : M. Durgeat, bâtisseur du château Durgeat. M. Leroy, propriétaire des vignes du Maromby. M. Moutel, créateur du Transud. Le professeur Sainty, directeur de l'école ménagère. Le docteur Carrière, qui soigna Jacqueline du paludisme à neuf mois, en juillet 1936.</p>
+                            <p>Et tant d'autres : Shisler au Trésor, l'avocat Bocard, chef de gare en 1930. De Pindray d'Ambelle, chef des travaux publics. Pachou, d'abord Grand Hôtel puis magasin Bata en 1950. Venot et son magasin et sa briqueterie au kilomètre 6. Basset et son magasin. Fievet, rizerie, menuiserie et vignes à Isorano.</p>
+                            <p>Charlier et sa menuiserie à Talatamaty. <strong>Jacta et le garage Citroën</strong> de 1930 à 1950, puis le garage « Tout pour l'Auto » à Isaha de 1950 à 1964, et la station Caltex de Talatamaty en 1956.</p>
+                            <p>Lombardo, sergent à Besoritra, qui créa le Betsileo Bus et l'hôtel Papillon en 1970. Le chirurgien militaire Pigagnol, qui réalisa en 1948 la première greffe des yeux.</p>
+                            <p><em>C'est l'histoire d'une petite famille européenne qui vécut à Fianarantsoa de 1930 à 1994.</em></p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+
+                <!-- Récit 8 : L'École des Rizières -->
+                <article class="recit-card" id="recit-rizieres">
+                    <div class="recit-card-inner">
+                        <span class="recit-number">VIII</span>
+                        <h3>L'École des Rizières — Mahaditra, 2012</h3>
+                        <p class="recit-excerpt">« Nous quittâmes Fianarantsoa à sept heures quarante-cinq pour arriver à Talatampano... la piste, défoncée, nous obligea à rouler au pas. »</p>
+                        <button class="recit-toggle" data-target="recit-8">Lire le récit</button>
+                    </div>
+                    <div class="recit-full" id="recit-8">
+                        <div class="recit-content">
+                            <p><em>Le 27 février 2012.</em></p>
+                            <p>Nous quittâmes Fianarantsoa à sept heures quarante-cinq pour arriver à Talatampano à huit heures trente. De là, nous bifurquâmes vers Alakamisy Itenina par une piste à peine carrossable.</p>
+                            <p>Arrivée à Alakamisy Itenina à neuf heures quarante-cinq, puis la surprise : la piste, défoncée, nous obligea à rouler au pas. Crevaison à six kilomètres avant Mahaditra.</p>
+                            <p>Arrivés au collège de Mahaditra, nous contactâmes le proviseur, M. Razafindrakajy Madi, qui nous surprit avec une anecdote du 1er février 2012, plutôt triste. À la suite d'un orage violent, la foudre avait traversé les murs de toutes les classes du collège, tuant un élève de dix-sept ans et blessant une cinquantaine d'autres. Le traumatisme fut énorme. Ce collège manquait par ailleurs cruellement d'une bibliothèque.</p>
+                            <p>Puis, sous la pluie du cyclone Irina, nous allâmes visiter le village de Tapakaro, où nous rencontrâmes quelques enfants et leurs parents illettrés. De retour pour aller visiter un second village nommé Oromeka, la pluie, de plus en plus forte, nous barra la route.</p>
+                            <p>Nous nous réfugiâmes chez le proviseur pour un résumé des besoins de tous ces villages, isolés par les rizières et les cours d'eau. Pour les rejoindre, il faut compter de longues marches. Ils sont plus d'une cinquantaine d'enfants, et autant de parents, sans possibilité de rejoindre les écoles les plus proches.</p>
+                            <p>Les éducateurs auront l'obligation de se déplacer, et non les enfants, vu les difficultés. Nous comptons sur votre compréhension pour mener à bien ce projet, pour ces enfants et ces parents qui porteront l'avenir de Madagascar.</p>
+                        </div>
+                        <button class="recit-close">Fermer</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TÉMOIGNAGES SONORES -->
+    <section id="temoignages" class="section-temoignages">
+        <div class="container">
+            <h2 class="section-title">Témoignages Sonores</h2>
+            <p class="section-subtitle">La voix de Jacqueline — Écoutez les souvenirs</p>
+
+            <div class="audio-grid">
+                <div class="audio-card">
+                    <div class="audio-card-header">
+                        <span class="audio-number">1</span>
+                        <div>
+                            <h3>Isaha, le Garage et Fianarantsoa Capitale du Sud</h3>
+                            <p class="audio-duration">~25 minutes</p>
+                        </div>
+                    </div>
+                    <p class="audio-description">Construction du pont et du chemin de fer. Arrivée d'Albert Jacta avec Citroën en 1923. Ouverture du garage en 1930. La petite maison de l'avenue Lyautey. Fianarantsoa capitale du Sud. Le rallye de consommation Fianarantsoa–Ranomafana. L'Automobile Club de Madagascar.</p>
+                    <audio controls preload="none">
+                        <source src="assets/audio/enregistrement-3.m4a" type="audio/mp4">
+                    </audio>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-card-header">
+                        <span class="audio-number">2</span>
+                        <div>
+                            <h3>Photos et Souvenirs</h3>
+                            <p class="audio-duration">~12 minutes</p>
+                        </div>
+                    </div>
+                    <p class="audio-description">Tri de photos avec Mme Jacta. La fête des enfants au Cercle Français. Le bâtiment Scacco et le pont Boumache. La petite maison et le garage à travers les décennies. L'école européenne et les Norvégiennes.</p>
+                    <audio controls preload="none">
+                        <source src="assets/audio/enregistrement-4.m4a" type="audio/mp4">
+                    </audio>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-card-header">
+                        <span class="audio-number">3</span>
+                        <div>
+                            <h3>Promenade dans Fianarantsoa</h3>
+                            <p class="audio-duration">~25 minutes</p>
+                        </div>
+                    </div>
+                    <p class="audio-description">L'Hôtel Pachou et le magasin Bata. Le quartier européen et le bazaar malgache. Les cinémas Rex et Excelsior. Le Sud-Hôtel devenu Hôtel Betsileo. L'entreprise Fiervé. La gare. Le Transud de M. Moutel. Le château de Vohipeno. Le cyclone de 1953.</p>
+                    <audio controls preload="none">
+                        <source src="assets/audio/enregistrement-5.m4a" type="audio/mp4">
+                    </audio>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-card-header">
+                        <span class="audio-number">4</span>
+                        <div>
+                            <h3>Tananarive et Photos de Famille</h3>
+                            <p class="audio-duration">~7 minutes</p>
+                        </div>
+                    </div>
+                    <p class="audio-description">Vues de Tananarive et de ses digues. La population de Madagascar en 1945. L'équipe de soudeurs formés par Albert Jacta. L'avenue Besson devant le bâtiment Citroën. Le frère Emmanuel, né en France. La petite maison et le terrain de tennis à Isaha.</p>
+                    <audio controls preload="none">
+                        <source src="assets/audio/enregistrement-6.m4a" type="audio/mp4">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARTE INTERACTIVE -->
+    <section id="carte" class="section-carte">
+        <div class="container">
+            <h2 class="section-title">La Ville</h2>
+            <p class="section-subtitle">Promenade dans Fianarantsoa à travers les souvenirs</p>
+        </div>
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="map-info" class="map-info-panel">
+                <button class="map-info-close">&times;</button>
+                <h3 id="map-info-title"></h3>
+                <p id="map-info-text"></p>
+                <div id="map-info-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE PHOTOS -->
+    <section id="galerie" class="section-galerie">
+        <div class="container">
+            <h2 class="section-title">Galerie</h2>
+            <p class="section-subtitle">Les images d'une époque</p>
+
+            <div class="galerie-filters">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="villa">La Villa</button>
+                <button class="filter-btn" data-filter="courses">Les Courses</button>
+                <button class="filter-btn" data-filter="batiments">Les Bâtiments</button>
+                <button class="filter-btn" data-filter="evenements">Événements</button>
+                <button class="filter-btn" data-filter="vie">Vie Quotidienne</button>
+                <button class="filter-btn" data-filter="aujourdhui">Aujourd'hui</button>
+            </div>
+
+            <div class="galerie-grid" id="galerie-grid">
+                <!-- Photos will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&lsaquo;</button>
+            <button class="lightbox-next">&rsaquo;</button>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONNAGES -->
+    <section id="personnages" class="section-personnages">
+        <div class="container">
+            <h2 class="section-title">Les Personnages</h2>
+            <p class="section-subtitle">Les visages et les noms de Fianarantsoa</p>
+
+            <div class="personnages-grid">
+                <div class="personnage-card famille">
+                    <div class="personnage-icon">&#9733;</div>
+                    <h3>Famille Jacta</h3>
+                    <p><strong>Albert Jacta</strong> — Directeur du garage Citroën, puis « Tout pour l'Auto » à Isaha. Président de l'Automobile Club. Bâtisseur de la Villa Isaha.</p>
+                    <p><strong>Cécile Cocteau</strong> — Épouse d'Albert. Couturière, jardinière, femme de cœur. Créatrice du plus beau jardin de l'avenue.</p>
+                    <p><strong>Robert & Claude</strong> — Les frères aînés de Jacqueline.</p>
+                </div>
+
+                <div class="personnage-card batisseurs">
+                    <div class="personnage-icon">&#9960;</div>
+                    <h3>Les Bâtisseurs</h3>
+                    <p><strong>Lyautey & Gallieni</strong> — Ont tracé la Nationale 7 et fondé les premières infrastructures.</p>
+                    <p><strong>Leroy</strong> — Compagnon de Lyautey, devenu maire de Fianarantsoa.</p>
+                    <p><strong>Durgeat</strong> — Ingénieur, bâtisseur du château Durgeat.</p>
+                    <p><strong>Moutel</strong> — Directeur du Transud, créateur du réseau de transport.</p>
+                    <p><strong>Scacco</strong> — Entrepreneur, constructeur de l'immeuble Scacco (1942) et de la Villa Isaha.</p>
+                </div>
+
+                <div class="personnage-card commercants">
+                    <div class="personnage-icon">&#9879;</div>
+                    <h3>Les Commerçants</h3>
+                    <p><strong>Pachou</strong> — Grand Hôtel, puis magasin Bata.</p>
+                    <p><strong>Fievet</strong> — Rizerie, menuiserie, vignes d'Isorano.</p>
+                    <p><strong>Venot</strong> — Magasin de produits français et briqueterie au km 6.</p>
+                    <p><strong>Lombardo</strong> — Garage Ambalapaiso, créateur du Betsileo Bus et de l'Hôtel Papillon.</p>
+                    <p><strong>Basset</strong> — Magasin divers.</p>
+                    <p><strong>Sheik Abbas</strong> — Tailleur. « C'est lui qui habillait tous les hommes de la ville. »</p>
+                </div>
+
+                <div class="personnage-card medecins">
+                    <div class="personnage-icon">&#9764;</div>
+                    <h3>Les Médecins & Éducateurs</h3>
+                    <p><strong>Dr Carrière</strong> — A soigné Jacqueline du paludisme à 9 mois (1936).</p>
+                    <p><strong>Dr Pigagnol</strong> — Chirurgien militaire, a réalisé en 1948 la première greffe des yeux.</p>
+                    <p><strong>Prof. Sainty</strong> — Directeur de l'école ménagère, père d'Annie, amie de la famille Jacta.</p>
+                    <p><strong>Mme Julien</strong> — Infirmière de la Croix-Rouge.</p>
+                    <p><strong>Mme Lobet</strong> — Infirmière, surnommée « la panthère du Rombé ». Propriétaire de l'hôtel d'Ihosy.</p>
+                </div>
+
+                <div class="personnage-card personnel">
+                    <div class="personnage-icon">&#10084;</div>
+                    <h3>Les Fidèles</h3>
+                    <p><strong>Dada</strong> — Cuisinier chez Madame Jacta de 1940 à 1962. Maître de la cuisine à bois.</p>
+                    <p><strong>Pierre</strong> — Orphelin recueilli par Cécile en 1943. Serveur, jardinier, homme de confiance de la famille.</p>
+                    <p><strong>Gaston</strong> — Professeur malgache qui aidait Jacqueline après l'école.</p>
+                </div>
+
+                <div class="personnage-card hotelier">
+                    <div class="personnage-icon">&#9962;</div>
+                    <h3>Les Hôteliers</h3>
+                    <p><strong>Hôtel Picardy / Sud Hôtel</strong> — Lieu des réceptions et remises de coupes.</p>
+                    <p><strong>Berny</strong> — Éleveur de bœufs, fondateur du premier hôtel de Ranohira.</p>
+                    <p><strong>Bouriane</strong> — Hôtel-restaurant de Ranomafana, lieu des grandes réceptions.</p>
+                    <p><strong>Potier</strong> — Barman du Cercle Français, « se faisait la joie de nous recevoir les bras ouverts ».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section-apropos">
+        <div class="container">
+            <div class="apropos-content">
+                <h2 class="section-title">À propos</h2>
+                <div class="apropos-bio">
+                    <h3>Jacqueline Jacta épouse COP</h3>
+                    <p>Née le 27 octobre 1935 à Ay, en Champagne, de Monsieur Albert Jacta et Cécile Cocteau. Jacqueline a grandi à Fianarantsoa, Madagascar, où son père dirigeait le garage Citroën puis le garage « Tout pour l'Auto » à Isaha.</p>
+                    <p>Scolarisée à l'école européenne près de la vieille poste, pianiste, elle a vécu l'âge d'or de Fianarantsoa — les bals du Cercle Français, les courses automobiles, les promenades à Ranomafana et Isorano.</p>
+                    <p>Mariée en 1956, mère d'un fils né en 1959, elle quitte définitivement Madagascar en 1960. Installée en France, elle n'a jamais cessé de porter Fianarantsoa dans son cœur et de transmettre ses souvenirs à travers ses écrits et ses photographies.</p>
+                </div>
+                <div class="apropos-projet">
+                    <h3>Ce projet</h3>
+                    <p>Ce site rassemble les souvenirs vivants de Jacqueline Jacta épouse COP et de Fianarantsoa à la belle époque. Il a été réalisé à partir de ses récits personnels, de ses photographies d'archives et de ses témoignages transmis avec passion.</p>
+                    <p>Toutes les citations sont extraites de ses écrits originaux, préservés dans leur authenticité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-quote">« En un mot, une ville pleine de vie, d'amour, de beauté, de traditions où l'on ne s'ennuie rarement. »</p>
+            <p class="footer-attribution">— Jacqueline Jacta épouse COP</p>
+            <p class="footer-copy">Souvenirs vivants de Jacqueline Jacta · Fianarantsoa, Madagascar</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

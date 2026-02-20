@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livret — Fianarantsoa à la Belle Époque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           LIVRET IMPRIMABLE — FIANARANTSOA
+           Format A4 paysage pour impression PDF
+           ============================================ */
+
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sepia-dark: #3C2415;
+            --sepia-medium: #6B4226;
+            --sepia-light: #A67B5B;
+            --sepia-cream: #F5E6D3;
+            --sepia-ivory: #FDF8F0;
+            --sepia-paper: #F0E4D0;
+            --gold: #C5963A;
+            --gold-light: #E8C96A;
+            --text-dark: #2C1810;
+            --text-medium: #5C4030;
+        }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: var(--text-dark);
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        /* --- PAGE STRUCTURE --- */
+        .page {
+            width: 297mm;
+            min-height: 210mm;
+            padding: 15mm 20mm;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+            background: var(--sepia-ivory);
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 8mm;
+            right: 15mm;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 10pt;
+            color: var(--sepia-light);
+        }
+
+        .page-header {
+            position: absolute;
+            top: 8mm;
+            right: 15mm;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8pt;
+            color: var(--sepia-light);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* --- COUVERTURE --- */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                linear-gradient(135deg, rgba(60, 36, 21, 0.85), rgba(60, 36, 21, 0.6)),
+                var(--sepia-paper);
+            color: var(--sepia-cream);
+        }
+
+        .cover-ornament {
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+            margin: 15px auto;
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42pt;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .cover h1 span {
+            display: block;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 28pt;
+            color: var(--gold);
+        }
+
+        .cover .cover-author {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16pt;
+            margin-top: 20px;
+            letter-spacing: 0.1em;
+        }
+
+        .cover .cover-dates {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11pt;
+            color: var(--sepia-light);
+            letter-spacing: 0.2em;
+            margin-top: 8px;
+        }
+
+        .cover .cover-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12pt;
+            max-width: 500px;
+            margin-top: 30px;
+            color: var(--gold-light);
+            line-height: 1.5;
+        }
+
+        /* --- DÉDICACE --- */
+        .dedicace {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .dedicace-content {
+            max-width: 450px;
+        }
+
+        .dedicace h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 20pt;
+            color: var(--sepia-dark);
+            margin-bottom: 20px;
+        }
+
+        .dedicace p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13pt;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        /* --- CHAPITRES --- */
+        .chapter-title-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--sepia-paper);
+        }
+
+        .chapter-number {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 48pt;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .chapter-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            color: var(--sepia-dark);
+            margin-top: 10px;
+        }
+
+        .chapter-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 14pt;
+            color: var(--text-medium);
+            margin-top: 8px;
+        }
+
+        .chapter-ornament {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        /* --- CONTENU --- */
+        .content-page {
+            display: flex;
+            gap: 20mm;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16pt;
+            color: var(--sepia-dark);
+            margin-bottom: 10px;
+        }
+
+        .content-text p {
+            font-size: 10.5pt;
+            color: var(--text-medium);
+            margin-bottom: 8px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .content-text .quote {
+            padding: 8px 15px;
+            border-left: 3px solid var(--gold);
+            background: rgba(197, 150, 58, 0.05);
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12pt;
+            color: var(--sepia-medium);
+            margin: 12px 0;
+        }
+
+        .content-image {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .content-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(60, 36, 21, 0.15);
+        }
+
+        .content-image .img-caption {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 9pt;
+            color: var(--sepia-light);
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* --- PHOTO PAGES --- */
+        .photo-page {
+            display: grid;
+            gap: 10px;
+            padding: 12mm 15mm;
+        }
+
+        .photo-page.grid-2x2 {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .photo-page.grid-1-large {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .photo-page.grid-3 {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .photo-page.grid-3 .photo-item:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: var(--sepia-paper);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-item .photo-legend {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 12px 8px;
+            background: linear-gradient(transparent, rgba(44, 24, 16, 0.8));
+            color: var(--sepia-cream);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 10pt;
+        }
+
+        .photo-item .photo-legend strong {
+            display: block;
+            font-size: 11pt;
+        }
+
+        /* --- TIMELINE PAGE --- */
+        .timeline-page {
+            padding: 15mm 25mm;
+        }
+
+        .timeline-page h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18pt;
+            color: var(--sepia-dark);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .mini-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .mini-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gold);
+        }
+
+        .mini-tl-item {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .mini-tl-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .mini-tl-item .tl-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 11pt;
+            color: var(--gold);
+        }
+
+        .mini-tl-item .tl-text {
+            font-size: 9.5pt;
+            color: var(--text-medium);
+        }
+
+        /* --- SOMMAIRE --- */
+        .sommaire {
+            padding: 20mm 30mm;
+        }
+
+        .sommaire h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22pt;
+            color: var(--sepia-dark);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .sommaire-list {
+            list-style: none;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .sommaire-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 6px 0;
+            border-bottom: 1px dotted var(--sepia-light);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13pt;
+            color: var(--text-medium);
+        }
+
+        .sommaire-list li span.chap {
+            font-weight: 600;
+            color: var(--sepia-dark);
+        }
+
+        .sommaire-list li span.pg {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* --- 4ème DE COUVERTURE --- */
+        .back-cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--sepia-dark);
+            color: var(--sepia-cream);
+        }
+
+        .back-cover .back-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16pt;
+            max-width: 500px;
+            color: var(--gold);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .back-cover .back-attribution {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11pt;
+            color: var(--sepia-light);
+        }
+
+        .back-cover .back-info {
+            margin-top: 40px;
+            font-size: 9pt;
+            color: rgba(166, 123, 91, 0.5);
+            letter-spacing: 0.15em;
+        }
+
+        /* --- PRINT BUTTON --- */
+        .print-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--sepia-dark);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .print-bar span {
+            color: var(--sepia-cream);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14pt;
+        }
+
+        .print-btn {
+            padding: 8px 25px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12pt;
+            cursor: pointer;
+            letter-spacing: 0.1em;
+        }
+
+        .print-btn:hover {
+            background: var(--gold-light);
+            color: var(--sepia-dark);
+        }
+
+        @media print {
+            .print-bar { display: none; }
+            body { background: white; }
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        @media screen {
+            body {
+                background: #666;
+                padding-top: 60px;
+            }
+            .page {
+                margin: 20px auto;
+                box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRE D'IMPRESSION -->
+    <div class="print-bar">
+        <span>Livret — Fianarantsoa à la Belle Époque</span>
+        <button class="print-btn" onclick="window.print()">Imprimer / Sauvegarder en PDF</button>
+    </div>
+
+    <!-- ========== PAGE 1 : COUVERTURE ========== -->
+    <div class="page cover">
+        <div class="cover-ornament"></div>
+        <h1>Fianarantsoa<span>à la Belle Époque</span></h1>
+        <div class="cover-ornament"></div>
+        <p class="cover-author">Souvenirs vivants de <strong>Jacqueline Jacta</strong> épouse COP</p>
+        <p class="cover-dates">1935 &middot; AY, CHAMPAGNE &nbsp;&mdash;&nbsp; FIANARANTSOA, MADAGASCAR</p>
+        <p class="cover-quote">« Une ville pleine de vie, d'amour, de beauté, de traditions où l'on ne s'ennuie rarement. »</p>
+    </div>
+
+    <!-- ========== PAGE 2 : SOMMAIRE ========== -->
+    <div class="page sommaire">
+        <h2>Sommaire</h2>
+        <ul class="sommaire-list">
+            <li><span class="chap">Dédicace</span> <span class="pg">3</span></li>
+            <li><span class="chap">I — L'Arrivée (1923–1935)</span> <span class="pg">4</span></li>
+            <li><span class="chap">II — La Villa Isaha (1940–1950)</span> <span class="pg">6</span></li>
+            <li><span class="chap">III — Fianarantsoa à la Belle Époque</span> <span class="pg">8</span></li>
+            <li><span class="chap">IV — Les Courses Automobiles</span> <span class="pg">10</span></li>
+            <li><span class="chap">V — Promenade dans les Quartiers</span> <span class="pg">12</span></li>
+            <li><span class="chap">VI — Les Épreuves</span> <span class="pg">14</span></li>
+            <li><span class="chap">VII — Le Départ</span> <span class="pg">15</span></li>
+            <li><span class="chap">VIII — Fianarantsoa Aujourd'hui</span> <span class="pg">16</span></li>
+            <li><span class="chap">IX — Petite Histoire de Fianarantsoa</span> <span class="pg">17</span></li>
+            <li><span class="chap">X — L'École des Rizières</span> <span class="pg">18</span></li>
+            <li><span class="chap">Chronologie</span> <span class="pg">19</span></li>
+            <li><span class="chap">Les Personnages</span> <span class="pg">20</span></li>
+        </ul>
+        <span class="page-number">2</span>
+    </div>
+
+    <!-- ========== PAGE 3 : DÉDICACE ========== -->
+    <div class="page dedicace">
+        <div class="dedicace-content">
+            <h2>Dédicace</h2>
+            <p>À Jacqueline Jacta épouse COP,</p>
+            <p>qui a porté Fianarantsoa dans son cœur toute sa vie et qui, par ses récits et ses photographies, nous offre un voyage dans le temps — vers une époque où l'avenue Lyautey bruissait d'eucalyptus, où le Picardy résonnait de musique, et où une petite fille blonde découvrait le monde avec émerveillement.</p>
+            <p>Ce livret est un recueil de vos souvenirs, pour que rien ne se perde.</p>
+            <div class="cover-ornament" style="margin: 25px auto"></div>
+        </div>
+        <span class="page-number">3</span>
+    </div>
+
+    <!-- ========== PAGE 4 : CHAPITRE I — TITRE ========== -->
+    <div class="page chapter-title-page">
+        <span class="chapter-number">I</span>
+        <h2 class="chapter-name">L'Arrivée</h2>
+        <p class="chapter-subtitle">1923 — 1935</p>
+        <div class="chapter-ornament"></div>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12pt; color: var(--text-medium); max-width: 450px; text-align: center; margin-top: 10px;">
+            « Monsieur Jacta arriva à Tananarive en 1923 en même temps que l'équipe Citroën. »
+        </p>
+        <span class="page-number">4</span>
+    </div>
+
+    <!-- ========== PAGE 5 : CHAPITRE I — CONTENU ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <h3>De Paris à Fianarantsoa</h3>
+            <p>En 1923, un groupe de jeunes européens débarque à Tananarive, embauchés par la société Citroën pour l'ouverture du grand garage d'Analakely, dirigé par Pierre Gros. Parmi eux, <strong>Albert Jacta</strong>.</p>
+            <p>Sa femme, <strong>Cécile Cocteau</strong>, le rejoint en 1925. Elle arrive par bateau, passant par le canal de Suez, débarquant à Diego Suarez puis rejoignant Tamatave en hydroglisseur.</p>
+            <p>En 1930, Citroën décide d'ouvrir un nouveau garage à Fianarantsoa et choisit Albert Jacta comme directeur. La famille s'installe avenue Lyautey, dans une petite maison appartenant à M. Moutel, directeur du Transud.</p>
+
+            <div class="quote">
+                « Ma mère nous racontait toujours ce voyage avec des souvenirs tantôt merveilleux et plus ou moins cahotiques. »
+            </div>
+
+            <p>Le 27 octobre 1935, Jacqueline naît à Ay, en Champagne, pendant un congé en France. Sa mère, enceinte, avait attendu la naissance pour repartir avec ses frères Robert et Claude en décembre.</p>
+            <p>À son éveil de petite fille, elle découvre une grande avenue boisée d'eucalyptus, bambous et autres, qui ombrageaient par une voûte naturelle cette avenue, et la grosse maison où Lyautey avait résidé durant son séjour à Fianarantsoa.</p>
+        </div>
+        <div class="content-image">
+            <img src="../Hafa koa/1055 VU DE LA GARE 1930.jpg" alt="Vue de la gare 1930">
+            <p class="img-caption">Vue de la gare de Fianarantsoa — 1930</p>
+            <img src="../Hafa koa/1058 MAISON DE L EPOQUE GALLIENI DEMEURA.jpg" alt="Maison Gallieni" style="margin-top: 10px">
+            <p class="img-caption">Maison de l'époque Gallieni — Construction des années 1878-1900</p>
+        </div>
+        <span class="page-number">5</span>
+        <span class="page-header">Chapitre I — L'Arrivée</span>
+    </div>
+
+    <!-- ========== PAGE 6 : CHAPITRE II — TITRE ========== -->
+    <div class="page chapter-title-page">
+        <span class="chapter-number">II</span>
+        <h2 class="chapter-name">La Villa Isaha</h2>
+        <p class="chapter-subtitle">1940 — 1950</p>
+        <div class="chapter-ornament"></div>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12pt; color: var(--text-medium); max-width: 450px; text-align: center; margin-top: 10px;">
+            « À mes yeux de petite fille, elle est magnifique et trop belle. »
+        </p>
+        <span class="page-number">6</span>
+    </div>
+
+    <!-- ========== PAGE 7 : CHAPITRE II — CONTENU ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <h3>La maison du bonheur</h3>
+            <p>En 1940, papa décide d'acheter un terrain à côté du tennis pour construire la villa familiale. En creusant les fondations, surprise : un <strong>caveau de roi Betsileo</strong> avec ses ossements. Le quartier d'Isaha était le fief des rois Betsileo.</p>
+            <p>Conseillé par les sorciers, papa se plie au <em>fomba</em> pour conjurer les mauvais sorts. L'entreprise <strong>Scacco</strong> construit la villa, qui voit le jour en 1942.</p>
+
+            <div class="quote">
+                « Côté droit : le grand salon meublé de marqueterie d'Ambositra, un lustre en fer forgé, un grand divan en velours rouge accompagné de trois grands fauteuils, le piano. »
+            </div>
+
+            <p><strong>Dada</strong>, cuisinier fidèle de 1940 à 1962, règne sur la cuisine à bois. <strong>Pierre</strong>, orphelin recueilli par Cécile en 1943, devient homme de confiance de la famille.</p>
+            <p>Dans la cour de derrière : poulailler, potager, et dans la vallée, un magnifique verger en espalier avec toutes les sortes d'arbres fruitiers. Sur la rue, Cécile crée <strong>le plus beau jardin de l'avenue</strong>.</p>
+            <p>En 1950, papa fait construire le garage « Tout pour l'Auto » à côté de la maison, ainsi que la boulangerie sur l'avenue.</p>
+        </div>
+        <div class="content-image">
+            <img src="../Photo Madagascar/jardin les Franjipanier de MmJacta 42.jpg" alt="Jardin de Mme Jacta">
+            <p class="img-caption">Les frangipaniers du jardin créé par Cécile Cocteau</p>
+            <img src="../SARY/1952  garage ISAHA.jpg" alt="Garage Isaha 1952" style="margin-top: 10px">
+            <p class="img-caption">Le Garage Isaha « Tout pour l'Auto » — 1952</p>
+        </div>
+        <span class="page-number">7</span>
+        <span class="page-header">Chapitre II — La Villa Isaha</span>
+    </div>
+
+    <!-- ========== PAGE 8 : CHAPITRE III — TITRE ========== -->
+    <div class="page chapter-title-page">
+        <span class="chapter-number">III</span>
+        <h2 class="chapter-name">Fianarantsoa à la Belle Époque</h2>
+        <p class="chapter-subtitle">La vie sociale, le Cercle, les bals</p>
+        <div class="chapter-ornament"></div>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12pt; color: var(--text-medium); max-width: 500px; text-align: center; margin-top: 10px;">
+            « En un mot, une ville pleine de vie, d'amour, de beauté, de traditions où l'on ne s'ennuie rarement. »
+        </p>
+        <span class="page-number">8</span>
+    </div>
+
+    <!-- ========== PAGE 9 : CHAPITRE III — CONTENU ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <h3>Le Cercle Français</h3>
+            <p>Le cœur battant de la vie sociale européenne. On y trouvait les salles de bridge, billard, lecture, danse, bar, ping-pong, tennis. Le barman, <strong>M. Potier</strong>, se faisait la joie de recevoir tout le monde les bras ouverts.</p>
+
+            <div class="quote">
+                « Pour le réveillon du Jour de l'An 1950, j'ai eu l'honneur d'ouvrir le Bal avec Papa, habillée de ma première robe de bal en tulle bleu et paillettes. Ce fut l'admiration de tout le monde. »
+            </div>
+
+            <h3 style="margin-top: 15px">Les fêtes et réceptions</h3>
+            <p>Tous les ans : bals du Nouvel An en robe du soir et smoking, Pâques, 15 août, 11 novembre. Mardi Gras costumé pour les enfants. La distribution de bonbons et jeux à Noël. Au Cercle Français, un goûter annuel réunissait tous les enfants de la ville — la « quête des carnavals ».</p>
+            <p>Les dimanches : messe, puis papa au Cercle Français au billard. Les enfants au ping-pong ou tennis. L'après-midi, apéritif dansant jusqu'à 21h. L'Automobile Club de Madagascar présentait chaque année les nouveaux modèles de voitures devant un public élégant.</p>
+            <p>Les promenades : <strong>Ranomafana</strong> (piscine, hôtel Bouriane), <strong>lac Sahambava</strong> (pêche et bateau), <strong>Isorano</strong> (vignes Fievet et recherche d'or), <strong>Ambalavao</strong> (papier Antemoro), <strong>Ranohira</strong> (Isalo, hôtel Berny), <strong>Ambositra</strong> (marqueterie).</p>
+        </div>
+        <div class="content-image">
+            <img src="../Hafa koa/ob_483d65_cercle-francais-2 1930.jpg" alt="Cercle Français">
+            <p class="img-caption">Le Cercle Français de Fianarantsoa — 1930</p>
+            <img src="../Hafa koa/1046 LE PICARDY.jpg" alt="Le Picardy" style="margin-top: 10px">
+            <p class="img-caption">Le Picardy — Haut lieu de la vie sociale</p>
+        </div>
+        <span class="page-number">9</span>
+        <span class="page-header">Chapitre III — La Belle Époque</span>
+    </div>
+
+    <!-- ========== PAGE 10 : CHAPITRE IV — TITRE ========== -->
+    <div class="page chapter-title-page">
+        <span class="chapter-number">IV</span>
+        <h2 class="chapter-name">Les Courses Automobiles</h2>
+        <p class="chapter-subtitle">1955 — 1959</p>
+        <div class="chapter-ornament"></div>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12pt; color: var(--text-medium); max-width: 500px; text-align: center; margin-top: 10px;">
+            « Toujours sous la houlette de l'Automobile Club de Madagascar. »
+        </p>
+        <span class="page-number">10</span>
+    </div>
+
+    <!-- ========== PAGE 11 : CHAPITRE IV — PHOTOS COURSES ========== -->
+    <div class="page photo-page grid-2x2">
+        <div class="photo-item">
+            <img src="../Hafa koa/lever drapeau mr jacta50520 (2).jpg" alt="Levée du drapeau">
+            <div class="photo-legend">
+                <strong>Levée du drapeau — M. Jacta</strong>
+                Albert Jacta ouvre les courses en 1955
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="../Hafa koa/Numérisation_20150928 (2) PRESENTATION AUTO 1952.png" alt="Présentation auto 1952">
+            <div class="photo-legend">
+                <strong>Présentation automobile — 1952</strong>
+                Les élégantes et les nouvelles collections
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="../Hafa koa/7e rallye de mada 1957 50511 (2).jpg" alt="7ème rallye">
+            <div class="photo-legend">
+                <strong>7ème Rallye de Madagascar — 1957</strong>
+                Le grand rallye automobile de l'île
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="../Hafa koa/RALLYE CONSOMATION 1959 FIANAT RANOMAFANO MR LAIR ET COP.jpg" alt="Rallye consommation 1959">
+            <div class="photo-legend">
+                <strong>Rallye consommation — 1959</strong>
+                Fianarantsoa–Ranomafana, M. Lair et Cop
+            </div>
+        </div>
+        <span class="page-number">11</span>
+        <span class="page-header">Chapitre IV — Les Courses Automobiles</span>
+    </div>
+
+    <!-- ========== PAGE 12 : CHAPITRE V — TITRE ========== -->
+    <div class="page chapter-title-page">
+        <span class="chapter-number">V</span>
+        <h2 class="chapter-name">Promenade dans les Quartiers</h2>
+        <p class="chapter-subtitle">Ambalapaiso, Isaha, Ampasambazaha</p>
+        <div class="chapter-ornament"></div>
+        <span class="page-number">12</span>
+    </div>
+
+    <!-- ========== PAGE 13 : CHAPITRE V — PHOTOS BÂTIMENTS ========== -->
+    <div class="page photo-page grid-2x2">
+        <div class="photo-item">
+            <img src="../Hafa koa/ob_c3f635_residence TRANOPOKOLOLONA 1900.jpg" alt="Trano Pokolona">
+            <div class="photo-legend">
+                <strong>Trano Pokolona — 1900</strong>
+                Cœur de la vie communautaire
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="../Hafa koa/1088 SUD HOTEL TERMINE 1949 50.jpg" alt="Sud Hôtel">
+            <div class="photo-legend">
+                <strong>Sud Hôtel terminé — 1949-50</strong>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="../Hafa koa/ob_7d4754_la-piscine 1943 FOND MAISON LYAUTEY 1900 ET MUSE.jpg" alt="La piscine">
+            <div class="photo-legend">
+                <strong>La Piscine — 1943</strong>
+                En fond, la maison Lyautey de 1900
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="../Vaovao/Ancienne MAIRIE.jpg" alt="Ancienne Mairie">
+            <div class="photo-legend">
+                <strong>L'ancienne Mairie</strong>
+                Lieu du mariage de Jacqueline en 1956
+            </div>
+        </div>
+        <span class="page-number">13</span>
+        <span class="page-header">Chapitre V — Les Quartiers</span>
+    </div>
+
+    <!-- ========== PAGE 14 : CHAPITRE VI — LES ÉPREUVES ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <span class="chapter-number" style="font-size: 28pt">VI</span>
+            <h3>Les Épreuves</h3>
+            <p style="margin-top: 10px"><strong>Le cyclone de 1953</strong> frappe Fianarantsoa avec violence. Les rues d'Ampasambazaha sont submergées, les bâtiments inondés. Les photos témoignent de la catastrophe.</p>
+
+            <p style="margin-top: 10px"><strong>La piscine maudite</strong> — En creusant la piscine en 1943, les ouvriers découvrent un nid de serpents sacrés. Un vazaha les décapite à la hache. Les ouvriers, outrés, s'enfuient. La piscine devient maudite par le nombre de noyés.</p>
+
+            <div class="quote">
+                « Plus tard, ce vazaha n'a rencontré que des malédictions. De plus, ils n'ont jamais fait de fomba. »
+            </div>
+
+            <p><strong>Le voyage de 1947</strong> — Un moteur tombe en panne au-dessus de l'Afrique. Escale forcée au Caire. Survol des pyramides. Six mois en France pour Jacqueline, qui s'ennuie terriblement loin de son île.</p>
+        </div>
+        <div class="content-image">
+            <img src="../Photos/04-Evenements/cyclone-1953-rue-inondee.jpg" alt="Cyclone 1953">
+            <p class="img-caption">Le cyclone de 1953 — Inondations à Ampasambazaha</p>
+        </div>
+        <span class="page-number">14</span>
+        <span class="page-header">Chapitre VI — Les Épreuves</span>
+    </div>
+
+    <!-- ========== PAGE 15 : CHAPITRE VII — LE DÉPART ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <span class="chapter-number" style="font-size: 28pt">VII</span>
+            <h3>Le Départ</h3>
+            <p style="margin-top: 10px">En 1951, Jacqueline commence à fréquenter son futur mari — à la colère de sa mère qui l'expédie travailler avec son père au garage. Albert, avec intelligence, la fait retourner à des cours de français, calcul, dactylographie et commerce avec le directeur de l'école, M. Mouronval.</p>
+            <p>Elle travaille dix ans au garage. Le <strong>mariage</strong> est célébré en <strong>1956</strong> à la Mairie de Fianarantsoa, devant le maire M. Leroy.</p>
+            <p>Son fils naît en 1959. Mais il est gravement malade. En <strong>1960</strong>, Jacqueline quitte définitivement Madagascar.</p>
+
+            <div class="quote">
+                « J'ai toujours détesté la France. Je me demande encore maintenant qu'est-ce que je fais là. »
+            </div>
+
+            <p>Fianarantsoa à la belle époque n'est plus qu'un souvenir — mais quel souvenir. Un souvenir de vie, de lumière, de frangipaniers et de musique au Picardy. Un souvenir que Jacqueline n'a jamais cessé de porter dans son cœur et de transmettre à travers ses écrits.</p>
+        </div>
+        <div class="content-image">
+            <img src="../Hafa koa/ob_04cc25_avenue-besson.jpg" alt="Avenue Besson">
+            <p class="img-caption">Avenue Besson — L'artère principale de Fianarantsoa</p>
+            <img src="../Photo Madagascar/general de GAULLE 1953.jpg" alt="De Gaulle" style="margin-top: 10px">
+            <p class="img-caption">Visite du Général de Gaulle — 1953</p>
+        </div>
+        <span class="page-number">15</span>
+        <span class="page-header">Chapitre VII — Le Départ</span>
+    </div>
+
+    <!-- ========== PAGE 16 : CHAPITRE VIII — AUJOURD'HUI ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <span class="chapter-number" style="font-size: 28pt">VIII</span>
+            <h3>Fianarantsoa Aujourd'hui</h3>
+            <p style="margin-top: 10px">Fianarantsoa a changé. Les eucalyptus de l'avenue Lyautey ont laissé la place aux constructions. Le Cercle Français est devenu bibliothèque. Le tribunal perché sur sa butte a été rasé au profit de la Mairie.</p>
+            <p>Mais l'âme de la ville reste. Le Rova domine toujours les hauteurs. Les rizières s'étendent dans les vallées. Et dans les ruelles d'Ambalapaiso, on devine encore les fondations des maisons de l'époque Gallieni.</p>
+            <p>L'engagement de Jacqueline pour Madagascar ne s'est jamais éteint. En 2012, elle participe encore à un projet éducatif pour les enfants des rizières à Mahaditra, à travers les villages isolés de Sandranata.</p>
+
+            <div class="quote">
+                « Nous comptons sur votre compréhension pour mener à bien ce projet pour ces enfants et parents qui porteront l'avenir de Madagascar dans de meilleures conditions. »
+            </div>
+        </div>
+        <div class="content-image">
+            <img src="../20200429_091755.jpg" alt="Fianarantsoa aujourd'hui">
+            <p class="img-caption">Fianarantsoa aujourd'hui — Un bâtiment historique</p>
+            <img src="../Vaovao/ROVA 2012/SDC11738.JPG" alt="Le Rova" style="margin-top: 10px">
+            <p class="img-caption">Le Rova de Fianarantsoa — 2012</p>
+        </div>
+        <span class="page-number">16</span>
+        <span class="page-header">Chapitre VIII — Aujourd'hui</span>
+    </div>
+
+    <!-- ========== PAGE 17 : CHAPITRE IX — PETITE HISTOIRE ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <span class="chapter-number" style="font-size: 28pt">IX</span>
+            <h3>Petite Histoire de Madagascar et de Fianarantsoa</h3>
+            <p style="margin-top: 10px">Détachée de l'Afrique, Madagascar fut découverte par les Portugais en l'an 1500. Diego Diaz, le 10 août 1500, la surnomma « Île Nato Lourenço ». En 1643, l'île fut théoriquement annexée à la France. En 1665, elle prit le nom d'« Île Dauphine ».</p>
+            <p>Madagascar devint colonie française le 1er octobre 1895. Un traité de protectorat fut imposé à la reine Ranavalona III.</p>
+            <p>Il faut rappeler que la Nationale 7 fut tracée par le maréchal Gallieni, le maréchal Lyautey et le colonel Besson, accompagnés de leur infirmière Mme Lobet.</p>
+
+            <h3 style="margin-top: 12px">Les Pionniers de Fianarantsoa</h3>
+            <p>À Fianarantsoa : M. Durgeat, bâtisseur du château Durgeat. M. Leroy, propriétaire des vignes du Maromby. M. Moutel, créateur du Transud. Le professeur Sainty, directeur de l'école ménagère.</p>
+            <p>Et tant d'autres : Charlier et sa menuiserie à Talatamaty. Jacta et le garage Citroën de 1930 à 1950, puis le garage « Tout pour l'Auto » à Isaha.</p>
+            <p>Le chirurgien militaire Pigagnol, qui réalisa en 1948 la première greffe des yeux. C'est l'histoire d'une petite famille européenne qui vécut à Fianarantsoa de 1930 à 1994.</p>
+        </div>
+        <div class="content-image">
+            <img src="../Vaovao/MAISON A GALLIENI/SDC11737.JPG" alt="Maison Gallieni">
+            <p class="img-caption">Maison de l'époque Gallieni — Construction des années 1878-1900</p>
+            <img src="../Hafa koa/ob_04cc25_avenue-besson.jpg" alt="Avenue Besson" style="margin-top: 10px">
+            <p class="img-caption">L'avenue Besson, tracée par le colonel du même nom</p>
+        </div>
+        <span class="page-number">17</span>
+        <span class="page-header">Chapitre IX — Petite Histoire</span>
+    </div>
+
+    <!-- ========== PAGE 18 : CHAPITRE X — L'ÉCOLE DES RIZIÈRES ========== -->
+    <div class="page content-page">
+        <div class="content-text">
+            <span class="chapter-number" style="font-size: 28pt">X</span>
+            <h3>L'École des Rizières — Mahaditra, 2012</h3>
+            <p style="margin-top: 10px">En 2012, à travers les villages isolés de Sandranata, un projet éducatif est mis en place pour les enfants des rizières à Mahaditra. Les rizières de cette région, situées au sud de Fianarantsoa, offrent un décor de travail quotidien pour les familles paysannes.</p>
+
+            <div class="quote">
+                « Nous comptons sur votre compréhension pour mener à bien ce projet pour ces enfants et parents qui porteront l'avenir de Madagascar dans de meilleures conditions. »
+            </div>
+
+            <p>Ce projet témoigne de l'engagement durable de Jacqueline envers Madagascar, bien après son départ de l'île. À plus de 75 ans, elle continue de s'investir pour l'avenir des enfants malgaches, fidèle à l'esprit de solidarité qui animait la communauté de Fianarantsoa à la Belle Époque.</p>
+            <p>Le lien entre Jacqueline et Madagascar ne s'est jamais rompu. Les souvenirs de Fianarantsoa continuent de nourrir son engagement, prouvant que l'amour d'une ville et de ses habitants traverse le temps et les océans.</p>
+        </div>
+        <div class="content-image">
+            <img src="../Vaovao/ROVA 2012/DSCF4605.jpg" alt="Le Rova 2012">
+            <p class="img-caption">Le Rova de Fianarantsoa — 2012, lors du retour de Jacqueline</p>
+            <img src="../Vaovao/ROVA 2012/SDC11740.JPG" alt="Vue panoramique" style="margin-top: 10px">
+            <p class="img-caption">Vue panoramique depuis le Rova — Les rizières s'étendent à perte de vue</p>
+        </div>
+        <span class="page-number">18</span>
+        <span class="page-header">Chapitre X — L'École des Rizières</span>
+    </div>
+
+    <!-- ========== PAGE 19 : CHRONOLOGIE ========== -->
+    <div class="page timeline-page" style="padding: 12mm 20mm">
+        <h3>Chronologie</h3>
+        <div style="display: flex; gap: 30mm">
+            <div class="mini-timeline" style="flex: 1">
+                <div class="mini-tl-item">
+                    <span class="tl-year">1923</span>
+                    <span class="tl-text">Albert Jacta arrive à Tananarive avec l'équipe Citroën</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1925</span>
+                    <span class="tl-text">Cécile Cocteau rejoint Albert par bateau via le canal de Suez</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1930</span>
+                    <span class="tl-text">Ouverture du Garage Citroën à Fianarantsoa</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1933</span>
+                    <span class="tl-text">Naissance du frère de Jacqueline à Fianarantsoa</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1935</span>
+                    <span class="tl-text">Naissance de Jacqueline à Ay, en Champagne (27 octobre)</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1940</span>
+                    <span class="tl-text">Début de la construction de la Villa Isaha</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1942</span>
+                    <span class="tl-text">La Villa achevée. Premier immeuble Scacco.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1943</span>
+                    <span class="tl-text">Construction de la piscine. Pierre recueilli par Cécile.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1947</span>
+                    <span class="tl-text">Premier voyage en France. Panne d'avion au-dessus de l'Afrique.</span>
+                </div>
+            </div>
+            <div class="mini-timeline" style="flex: 1">
+                <div class="mini-tl-item">
+                    <span class="tl-year">1948-50</span>
+                    <span class="tl-text">Construction du Picardy. Première greffe des yeux par Dr Pigagnol.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1950</span>
+                    <span class="tl-text">Jacqueline ouvre le Bal du Nouvel An avec papa. Garage Isaha.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1953</span>
+                    <span class="tl-text">Cyclone à Ampasambazaha. Visite du Général de Gaulle.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1955</span>
+                    <span class="tl-text">Premières courses automobiles. Albert lève le drapeau.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1956</span>
+                    <span class="tl-text">Mariage de Jacqueline à la Mairie (Maire Leroy).</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1957</span>
+                    <span class="tl-text">3ème édition des courses. Alfa-Romeo, Porsche Carrera...</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1959</span>
+                    <span class="tl-text">Rallye consommation Fianar–Ranomafana. Naissance du fils.</span>
+                </div>
+                <div class="mini-tl-item">
+                    <span class="tl-year">1960</span>
+                    <span class="tl-text">Départ définitif pour la France.</span>
+                </div>
+            </div>
+        </div>
+        <span class="page-number">19</span>
+    </div>
+
+    <!-- ========== PAGE 20 : LES PERSONNAGES ========== -->
+    <div class="page" style="padding: 15mm 20mm">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 18pt; color: var(--sepia-dark); text-align: center; margin-bottom: 15px;">Les Personnages de Fianarantsoa</h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; font-size: 9pt; color: var(--text-medium);">
+            <div style="background: var(--sepia-paper); padding: 12px; border-radius: 4px;">
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: var(--sepia-dark); margin-bottom: 6px; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">Famille Jacta</h4>
+                <p><strong>Albert Jacta</strong> — Garage Citroën, Président Automobile Club</p>
+                <p><strong>Cécile Cocteau</strong> — Couturière, jardinière</p>
+                <p><strong>Robert & Claude</strong> — Frères aînés</p>
+                <p><strong>Dada</strong> — Cuisinier fidèle (1940-1962)</p>
+                <p><strong>Pierre</strong> — Orphelin recueilli en 1943</p>
+            </div>
+
+            <div style="background: var(--sepia-paper); padding: 12px; border-radius: 4px;">
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: var(--sepia-dark); margin-bottom: 6px; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">Les Bâtisseurs</h4>
+                <p><strong>Lyautey & Gallieni</strong> — Fondateurs</p>
+                <p><strong>Leroy</strong> — Maire de Fianarantsoa</p>
+                <p><strong>Durgeat</strong> — Château Durgeat</p>
+                <p><strong>Moutel</strong> — Transud</p>
+                <p><strong>Scacco</strong> — Villa Isaha, immeuble</p>
+                <p><strong>Lombardo</strong> — Betsileo Bus, Hôtel Papillon</p>
+            </div>
+
+            <div style="background: var(--sepia-paper); padding: 12px; border-radius: 4px;">
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: var(--sepia-dark); margin-bottom: 6px; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">Commerçants & Autres</h4>
+                <p><strong>Pachou</strong> — Grand Hôtel, puis Bata</p>
+                <p><strong>Fievet</strong> — Rizerie, vignes d'Isorano</p>
+                <p><strong>Venot</strong> — Magasin, briqueterie km 6</p>
+                <p><strong>Fiervé</strong> — Entreprise (quartier européen)</p>
+                <p><strong>Sheik Abbas</strong> — Tailleur de la ville</p>
+                <p><strong>Dr Pigagnol</strong> — 1ère greffe des yeux (1948)</p>
+                <p><strong>Mme Lobet</strong> — « La panthère du Rombé »</p>
+                <p><strong>Col. Besson</strong> — Tracé de la Nationale 7</p>
+            </div>
+        </div>
+        <span class="page-number">20</span>
+    </div>
+
+    <!-- ========== PAGE 21 : 4ème DE COUVERTURE ========== -->
+    <div class="page back-cover">
+        <p class="back-quote">« Une ville pleine de vie, d'amour, de beauté, de traditions où l'on ne s'ennuie rarement. »</p>
+        <p class="back-attribution">— Jacqueline Jacta épouse COP<br>Fianarantsoa, Madagascar</p>
+        <div class="cover-ornament" style="background: var(--gold); margin: 30px auto"></div>
+        <p class="back-info">SOUVENIRS VIVANTS DE JACQUELINE JACTA ÉPOUSE COP</p>
+    </div>
+
+</body>
+</html>
